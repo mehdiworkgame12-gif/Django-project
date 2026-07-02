@@ -9,4 +9,4 @@ def home(request):
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("divone")
+    return HttpResponse("سلام مهدی بنازم بهت")
