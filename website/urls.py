@@ -11,14 +11,18 @@ urlpatterns = [
 ]
 
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
 from blog import views
 from blog.views import http_test,json_test
+from website.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('https-test',http_test),
     path('json-test',json_test),
-    path('',include('website.urls'))
+    path('home',index_view),
+    path('contact',contact_view),
+    path('about',about_view),
+    
 ]
