@@ -9,10 +9,12 @@ def json_test(request):
     return JsonResponse({'name': 'mehdi'})
 
 def index_view(request):
-    return render(request, 'index.html')
+    return render(request, 'website/index.html')
 
 def about_view(request):
     return HttpResponse('<h1>About page</h1>')
 
 def contact_view(request):
     return HttpResponse('<h1>contact page</h1>')
+def contact_view(request):
+    return render(request,'contact.html')
