@@ -21,8 +21,9 @@ urlpatterns = [
     path('', views.home),
     path('https-test',http_test),
     path('json-test',json_test),
-    path('home',index_view),
     path('contact',contact_view),
     path('about',about_view),
-    
+    path('index', index_view),
+   
 ]
+    
