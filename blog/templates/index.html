@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>سایت من</title>
-</head>
-<body>
-<style>
-     h1 { color:red;
-     }
+{% extends "base.html" %}
 
-</style>
-    <h1>سلام 👋 به سایت من خوش آمدید</h1>
-    <p>این اولین صفحه HTML من است</p>
+{% block title %}خانه{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+<h1>به سایت من خوش آمدی 👋</h1>
+
+{% if user.is_authenticated %}
+    <p>سلام {{ user.username }} عزیز</p>
+{% else %}
+    <p>شما مهمان هستید</p>
+{% endif %}
+
+<hr>
+
+<h3>لیست آیتم‌ها:</h3>
+
+<ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% empty %}
+        <li>هیچ آیتمی وجود ندارد</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

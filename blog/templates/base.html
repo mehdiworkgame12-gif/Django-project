@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}سایت من{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- نوار بالا -->
+    <header class="header">
+        <h2>🚀 سایت ساده جنگو</h2>
+    </header>
+
+    <!-- منو -->
+    <nav class="nav">
+        <a href="/">خانه</a>
+        <a href="/about">درباره ما</a>
+        <a href="/contact">تماس</a>
+    </nav>
+
+    <!-- محتوای صفحه -->
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <p>© 2026 Django Simple Site</p>
+    </footer>
+
+</body>
+</html>
