@@ -21,7 +21,8 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('contact/', views.contact, name='contact'),
     path('test',test,name='test'),
-    path('single',blog_single,name='single')
+    path('single',blog_single,name='single'),
+    
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
