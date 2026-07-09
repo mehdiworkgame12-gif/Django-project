@@ -5,6 +5,8 @@ from blog.views import http_test, json_test
 from django.http import HttpResponse , JsonResponse
 from django.conf import settings
 from django.conf.urls.static import static
+app_name='blog'
+from blog.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -18,6 +20,8 @@ urlpatterns = [
     # صفحات HTML
     path('index/', views.index, name='index'),
     path('contact/', views.contact, name='contact'),
+    path('test',test,name='test'),
+    path('single',blog_single,name='single')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
