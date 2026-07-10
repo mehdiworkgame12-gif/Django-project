@@ -1,6 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 class Post(models.Model):
+    image=models.ImageField(upload_to='blog/',default='/blog/default.jpg')
+    auhtor=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     counted_view = models.IntegerField(default=0)
@@ -10,8 +12,8 @@ class Post(models.Model):
     published_date = models.DateTimeField(null=True)
     class Meta:
         ordering = ['-created_date']
-        verbose_name= 'پست'
-        verbose_name_plural= 'پست ها'
+        verbose_name= 'post'
+        verbose_name_plural= 'posts'
     def __str__(self):
         return  ' {} - {}' .format(self.title,self.id)
     
