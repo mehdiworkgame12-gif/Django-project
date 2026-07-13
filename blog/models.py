@@ -23,3 +23,5 @@ class Post(models.Model):
         verbose_name_plural= 'posts'
     def __str__(self):
         return  ' {} - {}' .format(self.title,self.id)
+from django.db import models
+

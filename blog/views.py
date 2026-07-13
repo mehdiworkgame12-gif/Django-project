@@ -35,3 +35,4 @@ def test(request):
     context={'posts':posts}
     return render (request,'test.html',context)
 
+
