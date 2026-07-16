@@ -34,5 +34,20 @@ def test(request):
     posts=Post.objects.all()
     context={'posts':posts}
     return render (request,'test.html',context)
+def test_view(request):
+    if request.method == 'POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        print(name,email)
+
+    return render(request, 'test.html',{})
+
+def index_view(request):
+    if request.method == 'POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        print(name,email)
+
+    return render(request, 'index.html',{})
 
 
