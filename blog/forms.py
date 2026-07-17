@@ -5,3 +5,4 @@ class NameForm(forms.Form):
     age = forms.IntegerField(label='سن')
     email = forms.EmailField(label='ایمیل')
     message = forms.CharField(label='پیام', widget=forms.Textarea)
+
