@@ -2,6 +2,7 @@ from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from blog.models import Post
 from blog.forms import NameForm
+from django.contrib import messages
 
 # صفحه اصلی
 def home(request):
@@ -27,7 +28,6 @@ def index(request):
     return render(request, "index.html", {
         "items": ["لپ‌تاپ", "موبایل", "موس"]
     })
-
 def blog_view(request):
     return render (request,'blog/blog-home.html')
 def blog_single(request):
