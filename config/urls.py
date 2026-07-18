@@ -1,28 +1,36 @@
 from django.contrib import admin
 from django.urls import path
+from django.contrib.sitemaps.views import sitemap
+
 from blog import views
 from blog.views import http_test, json_test
-from django.http import HttpResponse , JsonResponse
-from django.conf import settings
-from django.conf.urls.static import static
-app_name='blog'
-from blog.views import *
+from blog.sitemaps import StaticViewSitemap
+
+
+sitemaps = {
+    "static": StaticViewSitemap,
+}
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # صفحه اصلی
+    # sitemap
+    path(
+        'sitemap.xml',
+        sitemap,
+        {'sitemaps': sitemaps},
+        name='sitemap'
+    ),
+
+    # صفحات
     path('', views.home, name='home'),
+    path('index/', views.index, name='index'),
+    path('contact/', views.contact, name='contact'),
+    path('test/', views.test, name='test'),
+    path('single/', views.blog_single, name='single'),
 
     # تست‌ها
     path('https-test/', http_test),
     path('json-test/', json_test),
-
-    # صفحات HTML
-    path('index/', views.index, name='index'),
-    path('contact/', views.contact, name='contact'),
-    path('test',test,name='test'),
-    path('single',blog_single,name='single'),
-    
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
