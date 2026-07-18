@@ -25,4 +25,6 @@ class Post(models.Model):
         return  ' {} - {}' .format(self.title,self.id)
 from django.db import models
 from django import forms
+def get_absolute_url(self):
+    return reversed('blog:single',kwargs={'pid':self.id})
 
