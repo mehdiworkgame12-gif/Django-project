@@ -5,7 +5,7 @@ from django.urls import path, include
 from blog import views
 from blog.views import http_test, json_test
 from blog.sitemaps import StaticViewSitemap
-
+import debug_toolbar
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -34,4 +34,6 @@ urlpatterns = [
     path('https-test/', http_test),
     path('json-test/', json_test),
     path('robots.txt',include('robots.urls')),
+    path('__debug__/',include(debug_toolbar.urls)),
+
 ]

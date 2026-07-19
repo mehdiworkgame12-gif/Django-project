@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'django.contrib.humanize',
     'django_extensions',
     'django.contrib.sites',
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -129,3 +131,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT=BASE_DIR /'static'
 STATICFILES_DIRS = [
     BASE_DIR / 'blog/static']
+INTERNAL_IPS = [
+    
+    "127.0.0.1",
+]
