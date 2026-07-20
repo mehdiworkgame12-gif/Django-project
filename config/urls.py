@@ -35,5 +35,8 @@ urlpatterns = [
     path('json-test/', json_test),
     path('robots.txt',include('robots.urls')),
     path('__debug__/',include(debug_toolbar.urls)),
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
+    path("summernote/", include("django_summernote.urls")),
+    path('captcha/', include('captcha.urls')),
 
 ]

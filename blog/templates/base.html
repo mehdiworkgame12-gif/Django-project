@@ -1,5 +1,12 @@
 {% load static %}
 {% load humanize %}
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">ارسال</button>
+</form>
 <!DOCTYPE html>
 <html lang="fa">
 <head>

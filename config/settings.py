@@ -43,11 +43,53 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'taggit',
     'django.contrib.sitemaps',
+    'captcha',
+    "django_ckeditor_5",
+    "django_summernote",
     'blog',
     'robots',
      
 ]
 
+UMMERNOTE_THEME='bs4'
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+
+    # Or, you can set it to `False` to use SummernoteInplaceWidget by default - no iframe mode
+    # In this case, you have to load Bootstrap/jQuery sources and dependencies manually.
+    # Use this when you're already using Bootstrap/jQuery based themes.
+    'iframe': False,
+
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+
+        # Use proper language setting automatically (default)
+        'lang': None,
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+    }
+
+    }
+
+    
 SITE_ID= 2
 ROBOTS_USE_HOST= True
 ROBOTS_USE_SITEMAP= True
