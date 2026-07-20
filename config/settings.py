@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_extensions',
     'django.contrib.sites',
+    'taggit',
     'django.contrib.sitemaps',
     'blog',
     'robots',
-    
-    
+     
 ]
 
 SITE_ID= 2
