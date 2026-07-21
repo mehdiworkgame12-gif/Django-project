@@ -32,3 +32,10 @@ from django import forms
 def get_absolute_url(self):
     return reversed('blog:single',kwargs={'pid':self.id})
 
+class Comment(models.Model):
+    name = models.CharField(max_length=100)
+    message = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

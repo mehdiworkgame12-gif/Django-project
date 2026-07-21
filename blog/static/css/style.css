@@ -1,14 +1,18 @@
 body {
+    background: green !important;
+}
+
+body {
     font-family: sans-serif;
     direction: rtl;
     margin: 0;
-    background: #f5f7fb;
-    color: #333;
+    background: #59d46e;
+    color: #b54242;
 }
 
 .header {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
+    color: rgb(232, 226, 226);
     padding: 30px 20px;
     text-align: center;
 }
@@ -39,7 +43,7 @@ body {
     max-width: 1100px;
     margin: 30px auto;
     padding: 30px;
-    background: white;
+    background: rgb(180, 52, 52);
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,.1);
 }
@@ -57,4 +61,7 @@ body {
     object-fit: cover;
     border: 5px solid white;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+.header h2 {
+    color: red !important;
 }

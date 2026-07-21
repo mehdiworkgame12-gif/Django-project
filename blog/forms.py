@@ -7,3 +7,11 @@ class NameForm(forms.Form):
     message = forms.CharField(label='پیام', widget=forms.Textarea)
     captcha = CaptchaField()
 
+    from django import forms
+from .models import Comment
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['name', 'message']
+

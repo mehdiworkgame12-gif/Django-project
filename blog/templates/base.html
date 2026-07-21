@@ -1,12 +1,6 @@
 {% load static %}
 {% load humanize %}
-<form method="post">
-    {% csrf_token %}
 
-    {{ form.as_p }}
-
-    <button type="submit">ارسال</button>
-</form>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -15,30 +9,37 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
 
-    <!-- نوار بالا -->
-    <header class="header">
-        <h2>🚀 مهدی محسنی تقدیم میکند سایت جنگو Mehdi Mohseni</h2>
-    </header>
+<header class="header">
+    <h2>
+        🚀 مهدی محسنی تقدیم میکند سایت جنگو Mehdi Mohseni
+    </h2>
+</header>
 
-    <!-- منو -->
-    <nav class="nav">
-        <a href="/">خانه</a>
-        <a href="/about">درباره ما</a>
-        <a href="/contact">تماس Mehdi Nova</a>
-    </nav>
 
-    <!-- محتوای صفحه -->
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+<nav class="nav">
+    <a href="/">خانه</a>
+    <a href="/about">درباره ما</a>
+    <a href="/contact">تماس Mehdi Nova</a>
+</nav>
 
-    <!-- فوتر -->
-    <footer class="footer">
-        <p>© 2026 Django Simple Site</p>
-    </footer>
-    
+
+<main class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<footer class="footer">
+    <p>
+        © 2026 Django Simple Site
+    </p>
+</footer>
+
+
 </body>
 </html>

@@ -3,6 +3,8 @@ from django.http import HttpResponse, JsonResponse
 from blog.models import Post
 from blog.forms import NameForm
 from django.contrib import messages
+from .forms import CommentForm
+from .models import Comment
 
 # صفحه اصلی
 def home(request):
@@ -25,9 +27,23 @@ def contact(request):
     return render(request, 'contact.html')
 
 def index(request):
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "کامنت شما ثبت شد")
+
+    else:
+        form = CommentForm()
+
+    comments = Comment.objects.all().order_by('-created_date')
+
     return render(request, "index.html", {
-        "items": ["لپ‌تاپ", "موبایل", "موس"]
+        "items": ["لپ‌تاپ", "موبایل", "موس"],
+        "form": form,
+        "comments": comments,
     })
+
 def blog_view(request):
     return render (request,'blog/blog-home.html')
 def blog_single(request):

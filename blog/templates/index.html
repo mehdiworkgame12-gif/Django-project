@@ -1,19 +1,10 @@
-
 {% extends "base.html" %}
-
 {% block title %}
 Mehdi Nova | Home
 {% endblock %}
 
-
 {% block content %}
-<form method="post">
-    {% csrf_token %}
 
-    {{ form.as_p }}
-
-    <button type="submit">ارسال</button>
-</form>
 
 <section class="hero">
 
@@ -59,7 +50,7 @@ Mehdi Nova | Home
         </h2>
 
         <p>
-            Python • Django • SQL • Linux +javascript +react
+            Python • Django • SQL • Linux • JavaScript • React
         </p>
 
     </div>
@@ -69,7 +60,6 @@ Mehdi Nova | Home
 
 
 <section class="stats">
-
 
     <div class="stat-card">
         <h1>3+</h1>
@@ -88,14 +78,12 @@ Mehdi Nova | Home
         <p>اشتیاق یادگیری</p>
     </div>
 
-
 </section>
 
 
 
 
 <section class="skills">
-
 
 <h2>
 🔥 مهارت‌های من
@@ -106,59 +94,26 @@ Mehdi Nova | Home
 
 
 <div class="card">
-
-<h3>
-🐍 Python
-</h3>
-
-<p>
-ساخت برنامه‌های حرفه‌ای با پایتون
-</p>
-
+<h3>🐍 Python</h3>
+<p>ساخت برنامه‌های حرفه‌ای با پایتون</p>
 </div>
 
 
-
 <div class="card">
-
-<h3>
-⚡ Django
-</h3>
-
-<p>
-طراحی وب‌سایت و API با Django
-</p>
-
+<h3>⚡ Django</h3>
+<p>طراحی وب‌سایت و API با Django</p>
 </div>
 
 
-
-
 <div class="card">
-
-<h3>
-🗄 Database
-</h3>
-
-<p>
-SQL , SQLite , MariaDB
-</p>
-
+<h3>🗄 Database</h3>
+<p>SQL , SQLite , MariaDB</p>
 </div>
 
 
-
-
 <div class="card">
-
-<h3>
-☁️ Backend
-</h3>
-
-<p>
-Linux , Docker , Deployment
-</p>
-
+<h3>☁️ Backend</h3>
+<p>Linux , Docker , Deployment</p>
 </div>
 
 
@@ -172,57 +127,37 @@ Linux , Docker , Deployment
 
 <section class="projects">
 
-
 <h2>
 🚀 پروژه‌ها
 </h2>
-
 
 
 <div class="cards">
 
 
 <div class="card">
-
-<h3>
-Blog System
-</h3>
-
+<h3>Blog System</h3>
 <p>
 سیستم وبلاگ با Django،
 Authentication و Admin Panel
 </p>
-
 </div>
 
 
-
 <div class="card">
-
-<h3>
-API Project
-</h3>
-
+<h3>API Project</h3>
 <p>
 ساخت REST API حرفه‌ای
 </p>
-
 </div>
-
 
 
 <div class="card">
-
-<h3>
-AI Future
-</h3>
-
+<h3>AI Future</h3>
 <p>
 شروع مسیر هوش مصنوعی و Machine Learning
 </p>
-
 </div>
-
 
 
 </div>
@@ -233,8 +168,8 @@ AI Future
 
 
 
-<section class="django-items">
 
+<section class="django-items">
 
 <h2>
 📦 اطلاعات سایت
@@ -242,7 +177,6 @@ AI Future
 
 
 <ul>
-
 
 {% for item in items %}
 
@@ -253,7 +187,6 @@ AI Future
 
 {% empty %}
 
-
 <li>
 ❌ هیچ آیتمی وجود ندارد
 </li>
@@ -261,8 +194,77 @@ AI Future
 
 {% endfor %}
 
-
 </ul>
+
+</section>
+
+
+
+
+
+<section class="comments">
+
+<h2>
+💬 نظرات کاربران
+</h2>
+
+
+<form method="post">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+
+<button type="submit">
+ارسال کامنت
+</button>
+
+
+</form>
+
+
+<hr>
+
+
+<h3>
+کامنت‌ها:
+</h3>
+
+
+{% for comment in comments %}
+
+<div class="comment-box">
+
+<h4>
+{{ comment.name }}
+</h4>
+
+
+<p>
+{{ comment.message }}
+</p>
+
+
+<small>
+{{ comment.created_date }}
+</small>
+
+
+</div>
+
+
+<hr>
+
+
+{% empty %}
+
+<p>
+هنوز نظری ثبت نشده است.
+</p>
+
+
+{% endfor %}
 
 
 </section>
@@ -273,7 +275,6 @@ AI Future
 
 
 <section class="contact">
-
 
 <h2>
 🌐 ارتباط با من
@@ -300,6 +301,7 @@ AI Future
 
 
 
+
 <footer>
 
 <h3>
@@ -313,13 +315,5 @@ AI Future
 
 </footer>
 
-<body>
-    <form>
-        <input type="text" name="name" placeholder="نام خود را وارد کنید">
-        <input type="number" name="age" placeholder="سن خود را وارد کنید">
-        <input name='email' type="email" placeholder="ایمیل خود را وارد کنید">
-        {{form}}
-        <button type="submit">ارسال</button>
-    </form>
-</body>
+
 {% endblock %}
