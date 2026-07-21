@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['192.168.1.120', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -103,6 +104,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+MULTI_CAPTCHA_ADMIN={
+    'engine':'simple-captcha'
+}
 
 ROOT_URLCONF = 'config.urls'
 
