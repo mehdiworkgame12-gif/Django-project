@@ -13,8 +13,23 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content']
     summernote_fields = ('content',)
 
+class CommentAdmin(admin.ModelAdmin):
+    pass
+    """Model definition for ."""
+
+    # TODO: Define fields here
+
+    class Meta:
+        """Meta definition for ."""
+
+        verbose_name = ''
+        verbose_name_plural = 's'
+
+    def __str__(self):
+        """Unicode representation of ."""
+        pass
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category)
-admin.site.register(Comment)
+admin.site.register(Comment,CommentAdmin)
 

@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-njm&_a)k3v%f7op1i--m1-2tb%^q8$oh5#qwr-w)@l#(-*4j2i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.1.120', 'localhost', '127.0.0.1']
@@ -102,8 +103,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+
 MULTI_CAPTCHA_ADMIN={
     'engine':'simple-captcha'
 }
