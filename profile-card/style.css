@@ -1,69 +1,477 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f0f2f5;
-    font-family: Arial, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
-.card {
-    width: 350px;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(135deg,#020617,#0f172a,#1e1b4b);
+
+    overflow:hidden;
 }
 
 
-.card h1 {
-    font-size: 22px;
-    color: #222;
-    margin-bottom: 15px;
+/* نورهای پس زمینه */
+
+.bg{
+    position:absolute;
+    width:400px;
+    height:400px;
+
+    background:#00eaff;
+
+    filter:blur(150px);
+
+    top:-100px;
+    left:-100px;
+
+    animation:move 8s infinite alternate;
 }
 
 
-.card h3 {
-    color: #007bff;
-    margin-bottom: 20px;
+@keyframes move{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(300px,200px);
+    }
 }
 
 
-.card p {
-    color: #555;
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 15px;
+
+/* کارت اصلی */
+
+.card{
+
+    position:relative;
+
+    width:380px;
+
+    padding:35px;
+
+    text-align:center;
+
+    color:white;
+
+
+    background:
+    rgba(255,255,255,0.08);
+
+
+    
+
+
+    border-radius:30px;
+
+
+    border:1px solid rgba(255,255,255,.2);
+
+
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.5),
+
+    inset 0 0 30px rgba(255,255,255,.05);
+
+
+    transform-style:preserve-3d;
+
+
+    transition:.5s;
+
+
+    overflow:hidden;
+
 }
 
 
-.card button {
-    margin-top: 10px;
-    padding: 12px 30px;
-    border: none;
-    background: #007bff;
-    color: white;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
+
+/* حرکت سه بعدی */
+
+.card:hover{
+
+    transform:
+
+    perspective(1000px)
+
+    rotateX(8deg)
+
+    rotateY(-8deg)
+
+    translateY(-10px);
+
 }
 
 
-.card button:hover {
-    background: #0056b3;
+
+/* نور روی کارت */
+
+.card::before{
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+
+    background:
+
+    linear-gradient(
+
+    45deg,
+
+    #00ffff,
+
+    #7c3aed,
+
+    #ff00ff,
+
+    #00ffff
+
+    );
+
+
+    background-size:400%;
+
+
+    animation:border 8s linear infinite;
+
+
+    z-index:-1;
+
+
+    border-radius:30px;
+
 }
-.card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+
+
+
+@keyframes border{
+
+    0%{
+
+        background-position:0%;
+
+    }
+
+    100%{
+
+        background-position:400%;
+
+    }
+
+}
+
+
+
+
+
+/* افکت Shine */
+
+.shine{
+
+    position:absolute;
+
+    width:200px;
+
+    height:500px;
+
+    background:white;
+
+    opacity:.1;
+
+    transform:
+
+    rotate(30deg)
+
+    translateY(-500px);
+
+
+    animation:shine 5s infinite;
+
+}
+
+
+@keyframes shine{
+
+    100%{
+
+        transform:
+
+        rotate(30deg)
+
+        translateY(600px);
+
+    }
+
+}
+
+
+
+
+/* عکس */
+
+.profile{
+
+    position:relative;
+
+    width:150px;
+
+    height:150px;
+
+    margin:auto;
+
+}
+
+
+.profile img{
+
+    width:130px;
+
+    height:130px;
+
+    margin:10px;
+
+
+    border-radius:50%;
+
+
+    object-fit:cover;
+
+
+    border:4px solid white;
+
+
+    box-shadow:
+
+    0 0 30px #00ffff;
+
+
+}
+
+
+
+.circle{
+
+    position:absolute;
+
+    inset:0;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    conic-gradient(
+
+    #00ffff,
+
+    #7c3aed,
+
+    #ff00ff,
+
+    #00ffff
+
+    );
+
+
+    animation:spin 3s linear infinite;
+
+
+    z-index:-1;
+
+}
+
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+
+h1{
+
+    margin-top:25px;
+
+    font-size:27px;
+
+}
+
+
+
+h3{
+
+    margin:10px;
+
+    color:#00ffff;
+
+}
+
+
+
+
+.bio{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    margin:20px 0;
+
+}
+
+
+
+
+
+/* مهارت ها */
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+
+.skills span{
+
+
+    padding:8px 15px;
+
+
+    background:
+
+    rgba(255,255,255,.1);
+
+
+    border-radius:20px;
+
+
+    border:1px solid rgba(255,255,255,.2);
+
+
+    font-size:13px;
+
+
+    transition:.3s;
+
+}
+
+
+
+.skills span:hover{
+
+
+    background:#00ffff;
+
+
+    color:#111;
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+    0 0 20px #00ffff;
+
+}
+
+
+
+
+
+button{
+
+
+    margin-top:30px;
+
+
+    padding:14px 40px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    color:white;
+
+
+    font-size:16px;
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+
+    background:
+
+    linear-gradient(
+
+    45deg,
+
+    #00ffff,
+
+    #7c3aed
+
+    );
+
+
+
+    box-shadow:
+
+    0 0 25px #00ffff;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+button:hover{
+
+
+    transform:scale(1.1);
+
+
+    box-shadow:
+
+    0 0 50px #00ffff;
+
 }

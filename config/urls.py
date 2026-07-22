@@ -40,5 +40,6 @@ urlpatterns = [
     path("summernote/", include("django_summernote.urls")),
     path('captcha/', include('captcha.urls')),
     path('rss/feed/', LatestPostsFeed(),name='post_feeds'),
+    path('accounts/', include('accounts.urls')),
 
 ]
