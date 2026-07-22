@@ -4,6 +4,7 @@ from django.urls import reverse
 from taggit.managers import TaggableManager
 from django_ckeditor_5.fields import CKEditor5Field
 from django_summernote.fields import SummernoteTextField
+from django.urls import reverse
 class Category(models.Model):
     name= models.CharField(max_length=255)
     def __str__(self):
@@ -21,6 +22,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(null=True)
+    def get_absolute_url(self):
+        return reverse('single', args=[self.id])
     class Meta:
         ordering = ['-created_date']
         verbose_name= 'post'

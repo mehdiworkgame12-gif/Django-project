@@ -6,6 +6,7 @@ from blog import views
 from blog.views import http_test, json_test
 from blog.sitemaps import StaticViewSitemap
 import debug_toolbar
+from blog.feeds import LatestPostsFeed
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -38,5 +39,6 @@ urlpatterns = [
     path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("summernote/", include("django_summernote.urls")),
     path('captcha/', include('captcha.urls')),
+    path('rss/feed/', LatestPostsFeed(),name='post_feeds'),
 
 ]
