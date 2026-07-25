@@ -5,9 +5,13 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}سایت من{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>
+        {% block title %}سایت من{% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=3">
+
 </head>
 
 <body>
@@ -39,7 +43,6 @@
         © 2026 Django Simple Site
     </p>
 </footer>
-
 
 </body>
 </html>
