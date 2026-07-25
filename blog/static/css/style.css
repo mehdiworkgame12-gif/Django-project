@@ -1,18 +1,18 @@
 body {
-    background: green !important;
+    background: rgb(229, 238, 229) !important;
 }
 
 body {
     font-family: sans-serif;
     direction: rtl;
     margin: 0;
-    background: #59d46e;
-    color: #b54242;
+    background: #afe2b7;
+    color: #f8f8f8;
 }
 
 .header {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: rgb(232, 226, 226);
+    color: rgb(243, 243, 238);
     padding: 30px 20px;
     text-align: center;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 .nav a {
-    color: white;
+    color: rgb(248, 240, 240);
     margin: 0 15px;
     text-decoration: none;
     transition: 0.3s;
@@ -43,7 +43,7 @@ body {
     max-width: 1100px;
     margin: 30px auto;
     padding: 30px;
-    background: rgb(180, 52, 52);
+    background: rgb(218, 209, 209);
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,.1);
 }
@@ -63,5 +63,5 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
 .header h2 {
-    color: red !important;
+    color: rgb(230, 220, 220) !important;
 }
